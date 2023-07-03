@@ -59,6 +59,7 @@ function changeCity(event) {
                     ${cityTime.format("HH:mm:SS [<small>]A[</small>]")}
                 </diV>
             </div>
+        <a href="index.html">All cities</a>
     `;
 }
 
