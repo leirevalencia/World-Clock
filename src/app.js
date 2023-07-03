@@ -31,3 +31,29 @@ arizonaTimeElement.innerHTML = arizonaTime.format("HH:mm:SS [<small>]A[</small>]
 
 updateTime();
 setInterval(updateTime, 1000);
+
+//CHANGE SELECT
+function changeCity(event) {
+    let cityTimeZone = event.target.value;
+    let cityTime = moment().tz(cityTimeZone);
+    let citiesElement = document.querySelector("#cities");
+    citiesElement.innerHTML = `
+    <div class="city" >
+                <div>
+                    <h2>
+                        ${cityTimeZone}
+                    </h2>
+                    <div class="date">
+                        ${cityTime.format("MMMM Do YYYY")}
+                     </div>
+                </div>
+                <diV class="time">
+                    ${cityTime.format("HH:mm:SS [<small>]A[</small>]")}
+                </diV>
+            </div>
+    `;
+}
+
+
+let citiesElement = document.querySelector("#choose-city");
+citiesElement.addEventListener("change", changeCity);
