@@ -34,8 +34,6 @@ arizonaTimeElement.innerHTML = arizonaTime.format("HH:mm:SS [<small>]A[</small>]
 }
 }
 
-updateTime();
-setInterval(updateTime, 1000);
 
 //CHANGE SELECT
 function changeCity(event) {
@@ -63,6 +61,8 @@ function changeCity(event) {
     `;
 }
 
+updateTime();
+setInterval(updateTime, 1000);
 
 let citiesElement = document.querySelector("#choose-city");
 citiesElement.addEventListener("change", changeCity);
